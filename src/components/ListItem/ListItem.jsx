@@ -13,7 +13,8 @@ export default function ListItem(props) {
       checked={isDone}
       onClick={() => setIsDone(!isDone)}
       />
-      <span  className={isDone && 'isDone-Checked'}> {props.taskText}</span>     
+      <span  className={isDone && 'isDone-Checked'}> {props.taskText}</span> 
+      <button onClick={() => props.deleteTask(props.id)} >Remover</button>    
     </li>   
   )
 }

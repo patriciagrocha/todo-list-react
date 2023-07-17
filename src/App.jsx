@@ -20,13 +20,24 @@ function addNewTask(inputValue) {
   setTasksList([...tasksList, newTask])
 }
 
+function deleteTask (id) {
+  const tasksListFilter = tasksList.filter((item) => item.id != id )
+  setTasksList(tasksListFilter)
+}
+
   return (
     <>   
     <AddTask addNewTask = {addNewTask} />
     <div>
       <ul>
         {tasksList.map( task => (
-          <ListItem key={task.id} id={task.id} taskText={task.taskValue} isDone={task.isDone} />
+          <ListItem 
+            key={task.id} 
+            id={task.id} 
+            taskText={task.taskValue} 
+            isDone={task.isDone}
+            deleteTask={deleteTask} 
+          />
         ))}
       </ul>
     </div>
