@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css'
 import AddTask from './components/AddTask'
-import ListItem from './components/ListItem';
+import ListItem from './components/ListItem/ListItem';
 
 function App() {
   
@@ -26,7 +26,7 @@ function addNewTask(inputValue) {
     <div>
       <ul>
         {tasksList.map( task => (
-          <ListItem key={task.id} taskText={task.taskValue} />
+          <ListItem key={task.id} id={task.id} taskText={task.taskValue} isDone={task.isDone} />
         ))}
       </ul>
     </div>
