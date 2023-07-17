@@ -1,14 +1,14 @@
 import { useState } from "react";
 
 
-export default function AddTask(){
+export default function AddTask(props){
 
   const [task, setTask] = useState("");
 
   function handleAddTask(){
-  setTask(task)
-  console.log(task);
-
+    // eslint-disable-next-line react/prop-types
+    props.addNewTask(task);
+    setTask("")
   }
 
   return(
